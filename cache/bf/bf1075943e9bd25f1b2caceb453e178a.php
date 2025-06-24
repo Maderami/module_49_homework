@@ -55,10 +55,18 @@ class __TwigTemplate_acff68ef614525081b9babed181896d5 extends Template
     {
         $macros = $this->macros;
         // line 4
-        yield "    <h1>";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["welcome"] ?? null), "html", null, true);
-        yield "</h1>
-    <p>Это главная страница нашего сайта-визитки.</p>
+        yield "        <div class=\"row px-2\">
+            <div class=\"col-sm-12 col-md-6 col-lg-6 col-12 pt-5\">
+                        <div class=\"carousel-item active\">
+                            <h1 class=\"animated fadeInDown\" style=\"animation-delay: 1s\">Сайт в <span class=\"text-info\">разработке</span></h1>
+                            <p class=\"animated fadeInUp\" style=\"animation-delay: 2s\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, temporibus harum necessitatibus ipsum aut obcaecati.</p><button class=\"btn btn-info text-white\" type=\"button\">Подробнее</button> <button class=\"btn btn-info text-white\" type=\"button\">Наши контакты</button>
+                        </div>
+            </div>
+            <div class=\"col-sm-12 col-md-6 col-lg-6 col-12\"><img alt=\"\" class=\"img-fluid \" src=\"";
+        // line 11
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["__DIR__"] ?? null), "html", null, true);
+        yield "core/views/templates/resources/images/forcontacts.jpg\"></div>
+        </div>
 ";
         yield from [];
     }
@@ -84,7 +92,7 @@ class __TwigTemplate_acff68ef614525081b9babed181896d5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  58 => 4,  51 => 3,  40 => 1,);
+        return array (  67 => 11,  58 => 4,  51 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -92,8 +100,15 @@ class __TwigTemplate_acff68ef614525081b9babed181896d5 extends Template
         return new Source("{% extends 'layout.twig' %}
 
 {% block content %}
-    <h1>{{ welcome }}</h1>
-    <p>Это главная страница нашего сайта-визитки.</p>
+        <div class=\"row px-2\">
+            <div class=\"col-sm-12 col-md-6 col-lg-6 col-12 pt-5\">
+                        <div class=\"carousel-item active\">
+                            <h1 class=\"animated fadeInDown\" style=\"animation-delay: 1s\">Сайт в <span class=\"text-info\">разработке</span></h1>
+                            <p class=\"animated fadeInUp\" style=\"animation-delay: 2s\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, temporibus harum necessitatibus ipsum aut obcaecati.</p><button class=\"btn btn-info text-white\" type=\"button\">Подробнее</button> <button class=\"btn btn-info text-white\" type=\"button\">Наши контакты</button>
+                        </div>
+            </div>
+            <div class=\"col-sm-12 col-md-6 col-lg-6 col-12\"><img alt=\"\" class=\"img-fluid \" src=\"{{ __DIR__ }}core/views/templates/resources/images/forcontacts.jpg\"></div>
+        </div>
 {% endblock %}", "main.twig", "C:\\Users\\Yaroslav Stadnik\\Desktop\\Ярик\\SkillFactory\\module_49_homework\\core\\views\\templates\\main.twig");
     }
 }

@@ -1,6 +1,13 @@
 {% extends 'layout.twig' %}
 
 {% block content %}
-    <h1>{{ welcome }}</h1>
-    <p>Это главная страница нашего сайта-визитки.</p>
+        <div class="row px-2">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12 pt-5">
+                        <div class="carousel-item active">
+                            <h1 class="animated fadeInDown" style="animation-delay: 1s">Сайт в <span class="text-info">разработке</span></h1>
+                            <p class="animated fadeInUp" style="animation-delay: 2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, temporibus harum necessitatibus ipsum aut obcaecati.</p><button class="btn btn-info text-white" type="button">Подробнее</button> <button class="btn btn-info text-white" type="button">Наши контакты</button>
+                        </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12"><img alt="" class="img-fluid " src="{{ __DIR__ }}core/views/templates/resources/images/forcontacts.jpg"></div>
+        </div>
 {% endblock %}
