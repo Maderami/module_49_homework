@@ -26,7 +26,6 @@ class Route
     public function run($twig)
     {
         // контроллер и действие по умолчанию
-        $routes = $_GET['url'];
         $controllerName =  $this->getController();
         $actionName =  $this->getAction() . 'Action';
         // подцепляем файл с классом контроллера

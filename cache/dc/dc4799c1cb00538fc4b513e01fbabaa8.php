@@ -49,31 +49,40 @@ class __TwigTemplate_4905ed5754077c20af8ef6e668b79759 extends Template
         // line 6
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["title"] ?? null), "html", null, true);
         yield " | Сайт-визитка</title>
-    <link rel=\"stylesheet\" href=\"resources/css/style.css\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["__DIR__"] ?? null), "html", null, true);
+        yield "/core/views/templates/resources/css/bootstrap.min.css\" type=\"text/css\">
+    <script href=\"";
+        // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["__DIR__"] ?? null), "html", null, true);
+        yield "/core/views/templates/resources/js/bootstrap.min.js\" type=\"javascript\"></script>
 </head>
-<body>
+<body class=\"d-flex flex-column overflow-hidden min-vh-100 vh-100\">
 ";
-        // line 10
-        yield from $this->load("partials/header.twig", 10)->unwrap()->yield($context);
         // line 11
+        yield from $this->load("partials/header.twig", 11)->unwrap()->yield($context);
+        // line 12
         yield "
-<main>
+<main role=\"main\" class=\"flex-grow-1 overflow-auto\">
+    <div class=\"container\">
     ";
-        // line 13
+        // line 15
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
-        // line 14
-        yield "</main>
+        // line 16
+        yield "    </div>
+</main>
 
 ";
-        // line 16
-        yield from $this->load("partials/footer.twig", 16)->unwrap()->yield($context);
-        // line 17
+        // line 19
+        yield from $this->load("partials/footer.twig", 19)->unwrap()->yield($context);
+        // line 20
         yield "</body>
 </html>";
         yield from [];
     }
 
-    // line 13
+    // line 15
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -104,7 +113,7 @@ class __TwigTemplate_4905ed5754077c20af8ef6e668b79759 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  77 => 13,  71 => 17,  69 => 16,  65 => 14,  63 => 13,  59 => 11,  57 => 10,  50 => 6,  43 => 1,);
+        return array (  86 => 15,  80 => 20,  78 => 19,  73 => 16,  71 => 15,  66 => 12,  64 => 11,  58 => 8,  54 => 7,  50 => 6,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -115,13 +124,16 @@ class __TwigTemplate_4905ed5754077c20af8ef6e668b79759 extends Template
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <title>{{ title }} | Сайт-визитка</title>
-    <link rel=\"stylesheet\" href=\"resources/css/style.css\">
+    <link rel=\"stylesheet\" href=\"{{ __DIR__ }}/core/views/templates/resources/css/bootstrap.min.css\" type=\"text/css\">
+    <script href=\"{{ __DIR__ }}/core/views/templates/resources/js/bootstrap.min.js\" type=\"javascript\"></script>
 </head>
-<body>
+<body class=\"d-flex flex-column overflow-hidden min-vh-100 vh-100\">
 {% include 'partials/header.twig' %}
 
-<main>
+<main role=\"main\" class=\"flex-grow-1 overflow-auto\">
+    <div class=\"container\">
     {% block content %}{% endblock %}
+    </div>
 </main>
 
 {% include 'partials/footer.twig' %}
