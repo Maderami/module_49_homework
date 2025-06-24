@@ -3,7 +3,7 @@ require_once __DIR__ . '/core/config/config.php';
 require_once __DIR__ . '/core/Route.php';
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-
+session_start();
 
 
 $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

@@ -2,7 +2,10 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 // Настройки Twig
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../views/templates');
+$loader = new \Twig\Loader\FilesystemLoader([
+    __DIR__ . '/../views/templates',
+    __DIR__ . '/../views/templates/resources/'
+]);
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
     'debug' => true
