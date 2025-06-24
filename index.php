@@ -21,15 +21,23 @@ switch ($request) {
     case '/':
     case '/home':
     $routeMain = new core\Route('MainController', 'index', '');
-    $routeMain::run($twig);
+    $routeMain->run($twig);
         break;
     case '/about':
         $routeAbout = new core\Route('MainController', 'about', '');
-        $routeAbout::run($twig);
+        $routeAbout->run($twig);
         break;
     case '/contacts':
         $routeContacts = new core\Route('MainController', 'contacts', '');
-        $routeContacts::run($twig);
+        $routeContacts->run($twig);
+        break;
+    case '/generateimage':
+        $routeContacts = new core\Route('MainController', 'generateImage', '');
+        $routeContacts->run($twig);
+        break;
+    case '/phpinfo':
+        $routeContacts = new core\Route('MainController', 'phpinfo', '');
+        $routeContacts->run($twig);
         break;
     default:
         http_response_code(404);

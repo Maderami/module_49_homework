@@ -27,27 +27,33 @@ class Route
     {
         // контроллер и действие по умолчанию
         $routes = $_GET['url'];
-
+        $controllerName =  $this->getController();
+        $actionName =  $this->getAction() . 'Action';
+        // подцепляем файл с классом контроллера
+        $controllerFile = $controllerName . '.php';
+        $controllerPath = __DIR__ . '/' . $controllerFile;
         // получаем имя контроллера
-        if (!empty($routes)) {
-            $controllerName =  $this->getController() . 'Controller';
-            $actionName =  $this->getAction() . 'Action';
-            // подцепляем файл с классом контроллера
-            $controllerFile = $controllerName . '.php';
-            $controllerPath = __DIR__ . '/' . $controllerFile;
-            if (file_exists($controllerPath)) {
-                include  $controllerPath;
-                echo true;
-            } else {
-                Route::ErrorPage404();
-            }
-            $controller = new $controllerName($twig);
-                // вызываем действие контроллера
-            $controller->$actionName();
+
+        if(file_exists($controllerPath))
+        {
+            include $controllerPath;
         }
-
-
-
+        else
+        {
+            Route::ErrorPage404();
+        }
+        // создаем контроллер
+        $controller = new MainController($twig);
+        $action = $actionName;
+        if(method_exists($controller, $action))
+        {
+            // вызываем действие контроллера
+            $controller->$action();
+        }
+        else
+        {
+            Route::ErrorPage404();
+        }
 
 
     }

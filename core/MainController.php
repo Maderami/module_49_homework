@@ -39,9 +39,19 @@ class MainController {
         imagefill($image, 0, 0, $bgColor);
         imagestring($image, 5, 50, 40, 'Сайт-визитка', $textColor);
 
-        // Отправляем заголовки и выводим изображение
         header('Content-Type: image/png');
-        imagepng($image);
-        imagedestroy($image);
+        // Отправляем заголовки и выводим изображение
+        echo $this->twig->render('contacts.twig', [
+            'title' => 'Генерация картинки',
+            'imagepng' => imagepng($image),
+
+        ]);
+    }
+
+    public function phpinfoAction() {
+        echo $this->twig->render('phpinfo.twig', [
+            'title'=> 'Информация о PHP',
+            'phpinfo'=>phpinfo(),
+        ]);
     }
 }
