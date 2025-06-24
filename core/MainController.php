@@ -1,5 +1,6 @@
 <?php
-namespace app\controllers;
+namespace core;
+
 class MainController {
     private $twig;
 
@@ -7,28 +8,29 @@ class MainController {
         $this->twig = $twig;
     }
 
-    public function home() {
-        echo $this->twig->render('home.twig', [
+    public function indexAction() {
+        echo $this->twig->render('main.twig', [
             'title' => 'Главная страница',
             'welcome' => 'Добро пожаловать на наш сайт!'
         ]);
+
     }
 
-    public function about() {
+    public function aboutAction() {
         echo $this->twig->render('about.twig', [
             'title' => 'О нас',
             'about_text' => 'Мы - небольшая компания, занимающаяся созданием сайтов-визиток.'
         ]);
     }
 
-    public function contacts() {
+    public function contactsAction() {
         echo $this->twig->render('contacts.twig', [
             'title' => 'Контакты',
             'email' => 'contact@example.com',
             'phone' => '+7 (123) 456-78-90'
         ]);
     }
-    public function generateImage() {
+    public function generateImageAction() {
         // Создаем изображение
         $image = imagecreatetruecolor(200, 100);
         $bgColor = imagecolorallocate($image, 255, 255, 255);
