@@ -58,13 +58,13 @@ class __TwigTemplate_4905ed5754077c20af8ef6e668b79759 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["__DIR__"] ?? null), "html", null, true);
         yield "/core/views/templates/resources/js/bootstrap.min.js\" type=\"javascript\"></script>
 </head>
-<body class=\"d-flex flex-column overflow-hidden min-vh-100 vh-100\">
+<body class=\"d-flex flex-column min-vh-100 vh-100\">
 ";
         // line 11
         yield from $this->load("partials/header.twig", 11)->unwrap()->yield($context);
         // line 12
         yield "
-<main role=\"main\" class=\"flex-grow-1 overflow-auto\">
+<main role=\"main\">
     <div class=\"container\">
     ";
         // line 15
@@ -127,10 +127,10 @@ class __TwigTemplate_4905ed5754077c20af8ef6e668b79759 extends Template
     <link rel=\"stylesheet\" href=\"{{ __DIR__ }}/core/views/templates/resources/css/bootstrap.min.css\" type=\"text/css\">
     <script href=\"{{ __DIR__ }}/core/views/templates/resources/js/bootstrap.min.js\" type=\"javascript\"></script>
 </head>
-<body class=\"d-flex flex-column overflow-hidden min-vh-100 vh-100\">
+<body class=\"d-flex flex-column min-vh-100 vh-100\">
 {% include 'partials/header.twig' %}
 
-<main role=\"main\" class=\"flex-grow-1 overflow-auto\">
+<main role=\"main\">
     <div class=\"container\">
     {% block content %}{% endblock %}
     </div>
