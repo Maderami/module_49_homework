@@ -12,7 +12,7 @@
                     <div class="row justify-content-xl-center">
                         <div class="col-12 col-xl-11">
                             <h2 class="mb-3">Кто я?</h2>
-                            <p class="lead fs-4 text-secondary mb-3">Сейчас работаю, учусь и еще раз учусь.</p>
+                            <p class="lead fs-4 text-secondary mb-3">{{ whoIsMe }}</p>
                             <p class="mb-5">Навыков много и еще раз много</p>
                             <div class="row gy-4 gy-md-0 gx-xxl-5X">
                                 <div class="col-12 col-md-6">
@@ -27,10 +27,9 @@
                                             <h2 class="h4 mb-3">HardSkill</h2>
                                             <p class="text-secondary mb-0">
                                             <ul>
-                                            <li>PHP</li>
-                                            <li>JS</li>
-                                            <li>NGINX</li>
-                                            <li>APACHE</li>
+                                                {% for skillItem in hardSkill %}
+                                                    <li>{{ skillItem }}</li>
+                                                {% endfor %}
                                             </ul>
                                             </p>
                                         </div>
@@ -48,8 +47,9 @@
                                             <h2 class="h4 mb-3">SoftSkills</h2>
                                             <p class="text-secondary mb-0">
                                             <ul>
-                                                <li>Aris Express</li>
-                                                <li>PGAdmin</li>
+                                                {% for skillSoft in softSkill %}
+                                                    <li>{{ skillSoft }}</li>
+                                                {% endfor %}
                                             </ul>
                                             </p>
                                         </div>
