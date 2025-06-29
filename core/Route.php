@@ -2,6 +2,8 @@
 
 namespace core;
 
+use core\controllers\MainController;
+
 class Route
 {
     private $controller;
@@ -30,7 +32,7 @@ class Route
         $actionName =  $this->getAction() . 'Action';
         // подцепляем файл с классом контроллера
         $controllerFile = $controllerName . '.php';
-        $controllerPath = __DIR__ . '/' . $controllerFile;
+        $controllerPath = __DIR__ . '/controllers/' . $controllerFile;
         // получаем имя контроллера
 
         if(file_exists($controllerPath))

@@ -2,6 +2,7 @@
 
 {% block content %}
     <section class="py-3 py-md-5 py-xl-8">
+
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -32,7 +33,7 @@
                                                     </div>
                                                     <div>
                                                         <h4 class="mb-3 text-light">Адрес</h4>
-                                                        <address class="mb-0 text-light opacity-75">Омск</address>
+                                                        <address class="mb-0 text-light opacity-75">{{ contactInfo.address }}</address>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4 mb-xxl-5">
@@ -46,7 +47,7 @@
                                                             <div>
                                                                 <h4 class="mb-3 text-light">Телефон</h4>
                                                                 <p class="mb-0">
-                                                                    <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="tel:+15057922430">(505) 792-2430</a>
+                                                                    <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="tel:+15057922430">{{ contactInfo.phone }}</a>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -62,7 +63,7 @@
                                                             <div>
                                                                 <h4 class="mb-3 text-light">E-Mail</h4>
                                                                 <p class="mb-0">
-                                                                    <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="mailto:demo@yourdomain.com">demo@yourdomain.com</a>
+                                                                    <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a>
                                                                 </p>
                                                             </div>
                                                         </div>
